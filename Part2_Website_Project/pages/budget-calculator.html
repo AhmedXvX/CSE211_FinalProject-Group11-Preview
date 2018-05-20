@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculate your event budget - EventsX">
+    <title>Budget Calculator - EventsX</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav id="main-navigation" role="navigation">
+                <a href="../index.html" class="logo">EventsX</a>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="budget-calculator.html" class="active text-primary">Budget</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <a href="registration.html" class="btn btn-primary">Register Now</a>
+            </nav>
+        </div>
+    </header>
+
+    <nav aria-label="breadcrumb" class="breadcrumb">
+        <div class="container">
+            <a href="../index.html">Home</a>
+            <span class="separator">&gt;</span>
+            <span aria-current="page" class="current">Budget Calculator</span>
+        </div>
+    </nav>
+
+    <main class="container section-padding">
+        <div class="max-w-800 mx-auto bg-white p-4 rounded-md shadow-md">
+            <h1 class="text-3xl mb-4 text-center text-color">Event Budget Calculator</h1>
+
+            <form id="budgetForm">
+
+                <div class="mb-4">
+                    <h2 class="text-xl mb-2 text-primary border-b pb-2">Your Budget</h2>
+                    <div class="form-group">
+                        <label for="totalBudget" class="form-label">Total Planned Budget ($)</label>
+                        <input type="number" id="totalBudget" min="0" placeholder="e.g. 500" class="form-input">
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <h2 class="text-xl mb-2 text-primary border-b pb-2">Event Expenses</h2>
+                    <div class="grid-cols-200">
+                        <div>
+                            <label for="ticketPrice" class="form-label">Ticket Price ($)</label>
+                            <input type="number" id="ticketPrice" min="0" value="0" class="form-input">
+                        </div>
+                        <div>
+                            <label for="attendees" class="form-label">Number of People</label>
+                            <input type="number" id="attendees" min="1" value="1" class="form-input">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <h2 class="text-xl mb-2 text-primary border-b pb-2">Travel & Accommodation</h2>
+                    <div class="grid-cols-200">
+                        <div>
+                            <label for="travelCost" class="form-label">Travel Cost ($)</label>
+                            <input type="number" id="travelCost" min="0" value="0" class="form-input">
+                        </div>
+                        <div>
+                            <label for="accommodationCost" class="form-label">Accommodation ($)</label>
+                            <input type="number" id="accommodationCost" min="0" value="0" class="form-input">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <h2 class="text-xl mb-2 text-primary border-b pb-2">Additional Expenses</h2>
+                    <div class="grid-cols-200">
+                        <div>
+                            <label for="foodCost" class="form-label">Food & Beverage ($)</label>
+                            <input type="number" id="foodCost" min="0" value="0" class="form-input">
+                        </div>
+                        <div>
+                            <label for="miscCost" class="form-label">Miscellaneous ($)</label>
+                            <input type="number" id="miscCost" min="0" value="0" class="form-input">
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" id="calculateBtn" class="btn btn-primary w-100 mb-4">Calculate Remaining
+                    Budget</button>
+
+                <!-- Results Section -->
+                <div id="results" class="bg-slate-50 p-3 rounded-md" style="display: none;">
+                    <h3 class="mb-2 text-center text-xl">Budget Summary</h3>
+                    <div class="d-flex justify-between mb-1">
+                        <span>Your Budget:</span>
+                        <span id="displayTotalBudget" class="font-bold text-gray">$0.00</span>
+                    </div>
+                    <div class="d-flex justify-between mb-1">
+                        <span>Total Estimated Cost:</span>
+                        <span id="displayTotalExpenses" class="font-bold text-danger">$0.00</span>
+                    </div>
+                    <div class="border-b mb-2 mt-4"></div>
+                    <div class="d-flex justify-between text-xl">
+                        <span>Remaining Balance:</span>
+                        <span id="displayNetBalance" class="font-bold">$0.00</span>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>EventsX</h3>
+                    <p class="text-muted" style="max-width: 300px;">The best platform for managing your events
+                        efficiently and beautifully.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Links</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><a href="mailto:info@gu.edu.eg">info@gu.edu.eg</a></p>
+                    <div class="mt-4">
+                        <a href="https://linkedin.com" target="_blank" rel="noopener"
+                            style="margin-right: 1rem;">LinkedIn</a>
+                        <a href="https://facebook.com" target="_blank" rel="noopener"
+                            style="margin-right: 1rem;">Facebook</a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 EventsX. All rights reserved.</p>
+                <p>Last Updated: <time datetime="2025-12-30">December 30, 2025</time></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/calculator.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>
